@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/player2FiveUp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_button"
+        android:text="+5"
+        android:textColor="@color/button_fade"
+        app:layout_constraintEnd_toStartOf="@+id/player2life"
+        app:layout_constraintTop_toBottomOf="@+id/player2" />
+
+    <Button
+        android:id="@+id/player2OneUp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_button"
+        android:text="+1"
+        android:textColor="@color/button_fade"
+        app:layout_constraintEnd_toStartOf="@+id/player2life"
+        app:layout_constraintTop_toBottomOf="@+id/player2FiveUp" />
+
+    <Button
+        android:id="@+id/player2FiveDown"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_button"
+        android:text="-5"
+        android:textColor="@color/button_fade"
+        app:layout_constraintEnd_toStartOf="@+id/player2life"
+        app:layout_constraintTop_toBottomOf="@+id/player2OneDown" />
+
+    <Button
+        android:id="@+id/player2OneDown"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_button"
+        android:text="-1"
+        android:textColor="@color/button_fade"
+        app:layout_constraintEnd_toStartOf="@+id/player2life"
+        app:layout_constraintTop_toBottomOf="@+id/player2OneUp" />
+
+    <Button
+        android:id="@+id/player1FiveDown"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_button"
+        android:text="-5"
+        android:textColor="@color/button_fade"
+        app:layout_constraintStart_toEndOf="@+id/player1life"
+        app:layout_constraintTop_toBottomOf="@+id/player1OneDown" />
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/player_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/player_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/player1life"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/player1"
+        app:layout_constraintStart_toStartOf="@+id/player1"
+        app:layout_constraintTop_toBottomOf="@+id/player1">
+
+    </NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/player2life"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/player2"
+        app:layout_constraintStart_toStartOf="@+id/player2"
+        app:layout_constraintTop_toBottomOf="@+id/player2">
+
+    </NumberPicker>
+
+    <Button
+        android:id="@+id/player1FiveUp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_button"
+        android:text="+5"
+        android:textColor="@color/button_fade"
+        app:layout_constraintStart_toEndOf="@+id/player1life"
+        app:layout_constraintTop_toBottomOf="@+id/player1" />
+
+    <Button
+        android:id="@+id/player1OneUp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_button"
+        android:text="+1"
+        android:textColor="@color/button_fade"
+        app:layout_constraintStart_toEndOf="@+id/player1life"
+        app:layout_constraintTop_toBottomOf="@+id/player1FiveUp" />
+
+    <Button
+        android:id="@+id/player1OneDown"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_button"
+        android:text="-1"
+        android:textColor="@color/button_fade"
+        app:layout_constraintStart_toEndOf="@+id/player1life"
+        app:layout_constraintTop_toBottomOf="@+id/player1OneUp" />
+
+    <ImageView
+        android:id="@+id/player1PoisonLeft"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Poison"
+        app:layout_constraintEnd_toStartOf="@+id/player1Poison"
+        app:layout_constraintTop_toTopOf="@+id/player1Poison"
+        app:srcCompat="@mipmap/arrow_left" />
+
+    <ImageView
+        android:id="@+id/player1PoisonRight"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Poison"
+        app:layout_constraintStart_toEndOf="@+id/player1Poison"
+        app:layout_constraintTop_toTopOf="@+id/player1Poison"
+        app:srcCompat="@mipmap/arrow_right" />
+
+    <TextView
+        android:id="@+id/player1Poison"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/counter_horizontal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player1PoisonTitle"
+        app:layout_constraintStart_toStartOf="@+id/player1PoisonTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player1PoisonTitle" />
+
+    <TextView
+        android:id="@+id/player1PoisonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/title"
+        android:text="Player 1\nPoison Counters"
+        android:textAlignment="center"
+        android:textColor="#872099"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player1OneUp"
+        app:layout_constraintStart_toStartOf="@+id/player1life"
+        app:layout_constraintTop_toBottomOf="@+id/player1life" />
+
+    <TextView
+        android:id="@+id/player1CommanderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/title"
+        android:text="Player 1\nCommander Damage"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player1OneUp"
+        app:layout_constraintStart_toStartOf="@+id/player1life"
+        app:layout_constraintTop_toBottomOf="@+id/player1Poison" />
+
+    <TextView
+        android:id="@+id/player2CommanderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/title"
+        android:text="Player 2\nCommander Damage"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player2PoisonTitle"
+        app:layout_constraintStart_toStartOf="@+id/player2PoisonTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player2Poison" />
+
+    <TextView
+        android:id="@+id/player2PoisonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/title"
+        android:text="Player 2\nPoison Counters"
+        android:textAlignment="center"
+        android:textColor="#872099"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player2life"
+        app:layout_constraintStart_toStartOf="@+id/player2FiveDown"
+        app:layout_constraintTop_toBottomOf="@+id/player2life" />
+
+    <TextView
+        android:id="@+id/player2Poison"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/counter_horizontal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player2PoisonTitle"
+        app:layout_constraintStart_toStartOf="@+id/player2PoisonTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player2PoisonTitle" />
+
+    <ImageView
+        android:id="@+id/player2PoisonRight"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player2Poison"
+        app:layout_constraintStart_toEndOf="@+id/player2Poison"
+        app:layout_constraintTop_toTopOf="@+id/player2Poison"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/arrow_right" />
+
+    <ImageView
+        android:id="@+id/player2PoisonLeft"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player2Poison"
+        app:layout_constraintEnd_toStartOf="@+id/player2Poison"
+        app:layout_constraintTop_toTopOf="@+id/player2Poison"
+        app:srcCompat="@mipmap/arrow_left" />
+
+
+    <TextView
+        android:id="@+id/player2Commander"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/counter_horizontal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player2CommanderTitle"
+        app:layout_constraintStart_toStartOf="@+id/player2CommanderTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player2CommanderTitle" />
+
+    <TextView
+        android:id="@+id/player1Commander"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/counter_horizontal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/player1CommanderTitle"
+        app:layout_constraintStart_toStartOf="@+id/player1CommanderTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player1CommanderTitle" />
+
+    <ImageView
+        android:id="@+id/player2CommanderRight"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player2Commander"
+        app:layout_constraintStart_toEndOf="@+id/player2Commander"
+        app:layout_constraintTop_toTopOf="@+id/player2Commander"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/arrow_right" />
+
+    <ImageView
+        android:id="@+id/player1CommanderRight"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Commander"
+        app:layout_constraintStart_toEndOf="@+id/player1Commander"
+        app:layout_constraintTop_toTopOf="@+id/player1Commander"
+        app:srcCompat="@mipmap/arrow_right" />
+
+    <ImageView
+        android:id="@+id/player2CommanderLeft"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player2Commander"
+        app:layout_constraintEnd_toStartOf="@+id/player2Commander"
+        app:layout_constraintTop_toTopOf="@+id/player2Commander"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/arrow_left" />
+
+    <ImageView
+        android:id="@+id/player1CommanderLeft"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Commander"
+        app:layout_constraintEnd_toStartOf="@+id/player1Commander"
+        app:layout_constraintTop_toTopOf="@+id/player1Commander"
+        app:srcCompat="@mipmap/arrow_left" />
+
+    <Button
+        android:id="@+id/newGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="New Game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/coinFlipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Flip Coin"
+        app:layout_constraintBottom_toBottomOf="@+id/newGame"
+        app:layout_constraintEnd_toStartOf="@+id/newGame"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/newGame" />
+
+    <Button
+        android:id="@+id/diceRollButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Roll Dice"
+        app:layout_constraintBottom_toBottomOf="@+id/newGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/newGame"
+        app:layout_constraintTop_toTopOf="@+id/newGame" />
+
+</android.support.constraint.ConstraintLayout>
