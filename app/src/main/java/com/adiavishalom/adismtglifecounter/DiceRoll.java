@@ -79,19 +79,24 @@ public class DiceRoll extends AppCompatActivity {
                     } //END While
                 }
                 catch (Exception e) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(DiceRoll.this);
+                    int randomNumber = rng.nextInt(6) + 1;
+                    rollDice(randomNumber);
+                    textView.setText("Times 1 was rolled: " + one + "\nTimes 2 was rolled: " + two + "\nTimes 3 was rolled: " + three + "\nTimes 4 was rolled: " + four +
+                            "\nTimes 5 was rolled: " + five + "\nTimes 6 was rolled: " + six + "\nTotal Rolls: " + total);
 
-                    builder.setCancelable(true);
-                    builder.setTitle("Error");
-                    builder.setMessage("Please provide a number.");
-
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-                    builder.show();
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(DiceRoll.this);
+//
+//                    builder.setCancelable(true);
+//                    builder.setTitle("Error");
+//                    builder.setMessage("Please provide a number.");
+//
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.cancel();
+//                        }
+//                    });
+//                    builder.show();
                 }
 
 
