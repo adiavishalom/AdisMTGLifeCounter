@@ -35,8 +35,8 @@ public class MainActivity
     private TextView player1Poison, player2Poison;
     private ImageView player1CommanderLeft, player1CommanderRight, player2CommanderLeft, player2CommanderRight;
     private TextView player1Commander, player2Commander;
-    private TextView tokenCount, tokenStats, tokenHistory;
-    private Button tokenChange;
+    private TextView tokenCount, tokenStats;
+    private Button tokenChange, tokenOneUp, tokenOneDown;
     private ImageView tokenImage;
     private int tokenCountNumber;
 
@@ -100,10 +100,11 @@ public class MainActivity
         tokenCount = findViewById(R.id.tokenCount);
         tokenCountNumber = 0;
         tokenStats = findViewById(R.id.tokenStats);
-        tokenHistory=findViewById(R.id.tokenHistory);
         tokenChange= findViewById(R.id.tokenChange);
         tokenImage = findViewById(R.id.tokenImage);
         tokenImage.setImageResource(R.drawable.token_goblin);
+        tokenOneUp= findViewById(R.id.tokenOneUp);
+        tokenOneDown=findViewById(R.id.tokenOneDown);
 
 
 
@@ -199,6 +200,22 @@ public class MainActivity
             @Override
             public void onClick(View v) {
                 openTokenOptions();
+            }
+        });
+
+        tokenOneUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tokenCountNumber = CounterCheck(tokenCountNumber+1, 99, 0);
+                tokenCount.setText((tokenCountNumber) + "x");
+            }
+        });
+
+        tokenOneDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tokenCountNumber = CounterCheck(tokenCountNumber-1, 99, 0);
+                tokenCount.setText((tokenCountNumber) + "x");
             }
         });
         //PLAYER 1 BUTTONS END
@@ -343,17 +360,18 @@ public class MainActivity
     @Override
     public void applyGenerate(int amount, int power, int toughness)
     {
-        int gained = amount-tokenCountNumber;
-        if (tokenCountNumber<amount)
-        {
-            tokenHistory.setText("You gained " + gained + " tokens");
-        }
-        if (tokenCountNumber>amount)
-        {
-            tokenHistory.setText("You lost " + gained + " tokens");
-        }
+//        int gained = amount-tokenCountNumber;
+//        if (tokenCountNumber<amount)
+//        {
+//            tokenHistory.setText("You gained " + gained + " tokens");
+//        }
+//        if (tokenCountNumber>amount)
+//        {
+//            tokenHistory.setText("You lost " + gained + " tokens");
+//        }
         tokenStats.setText(power+"/"+toughness);
         tokenCount.setText(amount + "x");
+        tokenCountNumber = amount;
 
 //        textViewTokens.setText("You have, " + power + "/" + toughness + " tokens x" + amount);
     }
