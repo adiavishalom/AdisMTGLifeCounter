@@ -148,8 +148,8 @@
 
     <ImageView
         android:id="@+id/player1PoisonLeft"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Poison"
         app:layout_constraintEnd_toStartOf="@+id/player1Poison"
         app:layout_constraintTop_toTopOf="@+id/player1Poison"
@@ -157,8 +157,8 @@
 
     <ImageView
         android:id="@+id/player1PoisonRight"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Poison"
         app:layout_constraintStart_toEndOf="@+id/player1Poison"
         app:layout_constraintTop_toTopOf="@+id/player1Poison"
@@ -166,8 +166,8 @@
 
     <TextView
         android:id="@+id/player1Poison"
-        android:layout_width="54dp"
-        android:layout_height="36dp"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/counter_horizontal"
         android:textAlignment="center"
@@ -291,8 +291,8 @@
 
     <TextView
         android:id="@+id/player1Commander"
-        android:layout_width="54dp"
-        android:layout_height="36dp"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/counter_horizontal"
         android:textAlignment="center"
@@ -314,8 +314,8 @@
 
     <ImageView
         android:id="@+id/player1CommanderRight"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Commander"
         app:layout_constraintStart_toEndOf="@+id/player1Commander"
         app:layout_constraintTop_toTopOf="@+id/player1Commander"
@@ -333,8 +333,8 @@
 
     <ImageView
         android:id="@+id/player1CommanderLeft"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Commander"
         app:layout_constraintEnd_toStartOf="@+id/player1Commander"
         app:layout_constraintTop_toTopOf="@+id/player1Commander"
@@ -374,5 +374,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/newGame"
         app:layout_constraintTop_toTopOf="@+id/newGame" />
+
+    <ImageView
+        android:id="@+id/tokenImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/player1CommanderTitle"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="@+id/player1CommanderTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player1Commander"
+        tools:srcCompat="@drawable/token_goblin" />
+
+    <TextView
+        android:id="@+id/tokenStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/0"
+        android:textColor="#CC0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage"
+        app:layout_constraintEnd_toEndOf="@+id/tokenImage" />
+
+    <TextView
+        android:id="@+id/tokenCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0x"
+        android:textColor="#CC0000"
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage"
+        app:layout_constraintStart_toStartOf="@+id/tokenImage" />
+
+    <TextView
+        android:id="@+id/tokenHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Tokens Here"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/tokenImage"
+        app:layout_constraintStart_toStartOf="@+id/tokenImage"
+        app:layout_constraintTop_toBottomOf="@+id/tokenImage" />
+
+    <Button
+        android:id="@+id/tokenChange"
+        android:layout_width="34dp"
+        android:layout_height="172dp"
+        android:layout_marginStart="8dp"
+        android:text="Change Tokens"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage"
+        app:layout_constraintStart_toEndOf="@+id/tokenImage"
+        app:layout_constraintTop_toTopOf="@+id/tokenImage" />
 
 </android.support.constraint.ConstraintLayout>
