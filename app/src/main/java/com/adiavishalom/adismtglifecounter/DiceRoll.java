@@ -28,6 +28,7 @@ public class DiceRoll extends AppCompatActivity {
     private EditText editText;
     private Button multiButton;
     private Button statistics;
+    private ImageView backButton;
 
 
     @Override
@@ -43,6 +44,7 @@ public class DiceRoll extends AppCompatActivity {
         multiButton = findViewById(R.id.multiButton);
         editText = findViewById(R.id.editText);
         statistics = findViewById(R.id.statistics);
+        backButton = findViewById(R.id.diceBackButton);
 
 
 
@@ -137,6 +139,13 @@ public class DiceRoll extends AppCompatActivity {
                     }
                 });
                 builder.show();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

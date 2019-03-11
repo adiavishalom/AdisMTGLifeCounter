@@ -15,6 +15,7 @@ public class FlipCoin extends AppCompatActivity {
     private Button flip;
     private Random rng = new Random();
     private boolean flipped = false;
+    private ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class FlipCoin extends AppCompatActivity {
         result = findViewById(R.id.result);
         flip = findViewById(R.id.flip);
         coin.setVisibility(View.INVISIBLE);
+        backButton = findViewById(R.id.coinBackButton);
 
 
 
@@ -33,6 +35,13 @@ public class FlipCoin extends AppCompatActivity {
             public void onClick(View v) {
                 int randomNumber = rng.nextInt(2) + 1;
                 flipCoin(randomNumber);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -66,4 +75,6 @@ public class FlipCoin extends AppCompatActivity {
         return;
 
     }
+
+
 }
