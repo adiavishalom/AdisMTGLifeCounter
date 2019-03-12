@@ -11,7 +11,9 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity
+        extends AppCompatActivity
+        implements TokenDialog.TokenDialogListener{
 
     private Button newGame;
     private Button rollDice;
@@ -33,6 +35,12 @@ public class MainActivity extends AppCompatActivity{
     private TextView player1Poison, player2Poison;
     private ImageView player1CommanderLeft, player1CommanderRight, player2CommanderLeft, player2CommanderRight;
     private TextView player1Commander, player2Commander;
+    private TextView tokenCount, tokenStats;
+    private Button tokenChange, tokenOneUp, tokenOneDown;
+    private ImageView tokenImage;
+    private int tokenCountNumber;
+
+
 
 
     @Override
@@ -89,6 +97,17 @@ public class MainActivity extends AppCompatActivity{
         player2CommanderLeft = findViewById(R.id.player2CommanderLeft);
         player2CommanderRight = findViewById(R.id.player2CommanderRight);
 
+        tokenCount = findViewById(R.id.tokenCount);
+        tokenCountNumber = 0;
+        tokenStats = findViewById(R.id.tokenStats);
+        tokenChange= findViewById(R.id.tokenChange);
+        tokenImage = findViewById(R.id.tokenImage);
+        tokenImage.setImageResource(R.drawable.token_goblin);
+        tokenOneUp= findViewById(R.id.tokenOneUp);
+        tokenOneDown=findViewById(R.id.tokenOneDown);
+
+
+
         //New Game Button
         newGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +119,8 @@ public class MainActivity extends AppCompatActivity{
                 player2Poison.setText("0");
                 player1Commander.setText("0");
                 player2Commander.setText("0");
+                tokenCount.setText("0x");
+                tokenStats.setText("0/0");
             }
         });
 
@@ -174,6 +195,29 @@ public class MainActivity extends AppCompatActivity{
         });
 
         //Commander Damage End
+        //Token Buttons Start
+        tokenChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTokenOptions();
+            }
+        });
+
+        tokenOneUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tokenCountNumber = CounterCheck(tokenCountNumber+1, 99, 0);
+                tokenCount.setText((tokenCountNumber) + "x");
+            }
+        });
+
+        tokenOneDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tokenCountNumber = CounterCheck(tokenCountNumber-1, 99, 0);
+                tokenCount.setText((tokenCountNumber) + "x");
+            }
+        });
         //PLAYER 1 BUTTONS END
 
 
@@ -305,6 +349,31 @@ public class MainActivity extends AppCompatActivity{
             return max;
         }
         return count;
+    }
+
+    public void openTokenOptions()
+    {
+        TokenDialog tokenDialog = new TokenDialog();
+        tokenDialog.show(getSupportFragmentManager(), "token dialog");
+    }
+
+    @Override
+    public void applyGenerate(int amount, int power, int toughness)
+    {
+//        int gained = amount-tokenCountNumber;
+//        if (tokenCountNumber<amount)
+//        {
+//            tokenHistory.setText("You gained " + gained + " tokens");
+//        }
+//        if (tokenCountNumber>amount)
+//        {
+//            tokenHistory.setText("You lost " + gained + " tokens");
+//        }
+        tokenStats.setText(power+"/"+toughness);
+        tokenCount.setText(amount + "x");
+        tokenCountNumber = amount;
+
+//        textViewTokens.setText("You have, " + power + "/" + toughness + " tokens x" + amount);
     }
 
 

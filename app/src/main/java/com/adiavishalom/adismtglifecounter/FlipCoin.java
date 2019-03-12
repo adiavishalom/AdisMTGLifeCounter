@@ -46,15 +46,15 @@ public class FlipCoin extends AppCompatActivity {
         });
     }
     private void flipCoin(int randomNumber)
-    {                                                                   //////////////////////////////////////////////////////////////////////
-        if(flipped)                                                     //If flipped is true, then the button is currently set to reset     //
-        {                                                               //                                                                  //
-            flip.setText("Flip Coin");                                  //Button becomes Flip Coin again                                    //
-            coin.setVisibility(View.INVISIBLE);                         //the coin image disappears                                         //
-            result.setText("");                                         //result is cleared                                                 //
-            flipped = false;                                            //flipped is now false                                              //
-        }                                                               //////////////////////////////////////////////////////////////////////
-        else                                                            //If flipped is false, then the button is currently set to Flip Coin//
+    {                                                               //////////////////////////////////////////////////////////////////////
+        if(flipped)                                                 //If flipped is true, then the button is currently set to reset     //
+        {                                                           //                                                                  //
+            flip.setText("Flip Coin");                              //Button becomes Flip Coin again                                    //
+            coin.setVisibility(View.INVISIBLE);                     //the coin image disappears                                         //
+            result.setText("");                                     //result is cleared                                                 //
+            flipped = false;                                        //flipped is now false                                              //
+        }                                                           //////////////////////////////////////////////////////////////////////
+        else                                                        //If flipped is false, then the button is currently set to Flip Coin//
         {                                                           //                                                                  //
             if (randomNumber == 1)                                  //if rng=1,                                                         //
             {                                                       //                                                                  //
