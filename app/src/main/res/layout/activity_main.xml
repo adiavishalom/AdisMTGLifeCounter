@@ -9,6 +9,32 @@
 
 
     <Button
+        android:id="@+id/player2TokenOneDown"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_button"
+        android:text="-1"
+        android:textColor="@color/button_fade"
+        app:layout_constraintStart_toStartOf="@+id/tokenImage2"
+        app:layout_constraintTop_toBottomOf="@+id/tokenImage2" />
+
+    <Button
+        android:id="@+id/player2TokenOneUp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_button"
+        android:text="+1"
+        android:textColor="@color/button_fade"
+        app:layout_constraintEnd_toEndOf="@+id/tokenImage2"
+        app:layout_constraintStart_toEndOf="@+id/player2TokenOneDown"
+        app:layout_constraintTop_toBottomOf="@+id/tokenImage2" />
+
+    <Button
         android:id="@+id/player2FiveUp"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -135,7 +161,7 @@
         app:layout_constraintTop_toBottomOf="@+id/player1FiveUp" />
 
     <Button
-        android:id="@+id/tokenOneUp"
+        android:id="@+id/player1TokenOneUp"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -143,8 +169,8 @@
         android:background="@drawable/circle_button"
         android:text="+1"
         android:textColor="@color/button_fade"
-        app:layout_constraintEnd_toEndOf="@+id/tokenImage"
-        app:layout_constraintTop_toBottomOf="@+id/tokenImage" />
+        app:layout_constraintEnd_toEndOf="@+id/tokenImage1"
+        app:layout_constraintTop_toBottomOf="@+id/tokenImage1" />
 
     <Button
         android:id="@+id/player1OneDown"
@@ -159,7 +185,7 @@
         app:layout_constraintTop_toBottomOf="@+id/player1OneUp" />
 
     <Button
-        android:id="@+id/tokenOneDown"
+        android:id="@+id/player1TokenOneDown"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -168,14 +194,14 @@
         android:background="@drawable/circle_button"
         android:text="-1"
         android:textColor="@color/button_fade"
-        app:layout_constraintEnd_toStartOf="@+id/tokenOneUp"
-        app:layout_constraintStart_toStartOf="@+id/tokenImage"
-        app:layout_constraintTop_toBottomOf="@+id/tokenImage" />
+        app:layout_constraintEnd_toStartOf="@+id/player1TokenOneUp"
+        app:layout_constraintStart_toStartOf="@+id/tokenImage1"
+        app:layout_constraintTop_toBottomOf="@+id/tokenImage1" />
 
     <ImageView
         android:id="@+id/player1PoisonLeft"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Poison"
         app:layout_constraintEnd_toStartOf="@+id/player1Poison"
         app:layout_constraintTop_toTopOf="@+id/player1Poison"
@@ -183,8 +209,8 @@
 
     <ImageView
         android:id="@+id/player1PoisonRight"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Poison"
         app:layout_constraintStart_toEndOf="@+id/player1Poison"
         app:layout_constraintTop_toTopOf="@+id/player1Poison"
@@ -192,8 +218,8 @@
 
     <TextView
         android:id="@+id/player1Poison"
-        android:layout_width="36dp"
-        android:layout_height="24dp"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/counter_horizontal"
         android:textAlignment="center"
@@ -317,8 +343,8 @@
 
     <TextView
         android:id="@+id/player1Commander"
-        android:layout_width="36dp"
-        android:layout_height="24dp"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/counter_horizontal"
         android:textAlignment="center"
@@ -340,8 +366,8 @@
 
     <ImageView
         android:id="@+id/player1CommanderRight"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Commander"
         app:layout_constraintStart_toEndOf="@+id/player1Commander"
         app:layout_constraintTop_toTopOf="@+id/player1Commander"
@@ -359,8 +385,8 @@
 
     <ImageView
         android:id="@+id/player1CommanderLeft"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/player1Commander"
         app:layout_constraintEnd_toStartOf="@+id/player1Commander"
         app:layout_constraintTop_toTopOf="@+id/player1Commander"
@@ -402,7 +428,7 @@
         app:layout_constraintTop_toTopOf="@+id/newGame" />
 
     <ImageView
-        android:id="@+id/tokenImage"
+        android:id="@+id/tokenImage1"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -413,34 +439,74 @@
         app:layout_constraintTop_toBottomOf="@+id/player1Commander"
         tools:srcCompat="@drawable/token_goblin" />
 
+    <ImageView
+        android:id="@+id/tokenImage2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/player2CommanderTitle"
+        app:layout_constraintStart_toStartOf="@+id/player2CommanderTitle"
+        app:layout_constraintTop_toBottomOf="@+id/player2Commander"
+        tools:srcCompat="@drawable/token_goblin" />
+
     <TextView
-        android:id="@+id/tokenStats"
+        android:id="@+id/player1TokenStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0/0"
         android:textColor="#CC0000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tokenImage"
-        app:layout_constraintEnd_toEndOf="@+id/tokenImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage1"
+        app:layout_constraintEnd_toEndOf="@+id/tokenImage1" />
 
     <TextView
-        android:id="@+id/tokenCount"
+        android:id="@+id/player2TokenStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/0"
+        android:textColor="#CC0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage2"
+        app:layout_constraintEnd_toEndOf="@+id/tokenImage2" />
+
+    <TextView
+        android:id="@+id/player1TokenCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0x"
         android:textColor="#CC0000"
-        app:layout_constraintBottom_toBottomOf="@+id/tokenImage"
-        app:layout_constraintStart_toStartOf="@+id/tokenImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage1"
+        app:layout_constraintStart_toStartOf="@+id/tokenImage1" />
+
+    <TextView
+        android:id="@+id/player2TokenCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0x"
+        android:textColor="#CC0000"
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage2"
+        app:layout_constraintStart_toStartOf="@+id/tokenImage2" />
 
     <Button
-        android:id="@+id/tokenChange"
+        android:id="@+id/player1TokenChange"
         android:layout_width="35dp"
         android:layout_height="124dp"
         android:layout_marginStart="8dp"
         android:text="Generate"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tokenImage"
-        app:layout_constraintStart_toEndOf="@+id/tokenImage"
-        app:layout_constraintTop_toTopOf="@+id/tokenImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage1"
+        app:layout_constraintStart_toEndOf="@+id/tokenImage1"
+        app:layout_constraintTop_toTopOf="@+id/tokenImage1" />
+
+    <Button
+        android:id="@+id/player2TokenChange"
+        android:layout_width="35dp"
+        android:layout_height="124dp"
+        android:layout_marginEnd="8dp"
+        android:text="Generate"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tokenImage2"
+        app:layout_constraintEnd_toStartOf="@+id/tokenImage2"
+        app:layout_constraintTop_toTopOf="@+id/tokenImage2" />
 
 </android.support.constraint.ConstraintLayout>
