@@ -3,4 +3,23 @@
     <string name="player_1">PLAYER 1</string>
     <string name="player_2">PLAYER 2</string>
     <string name="title_activity_dice_roll">DiceRoll</string>
+    <string name="player_2_token_minus1">-1</string>
+    <string name="player_2_token_plus1">+1</string>
+    <string name="player_2_life_plus5">+5</string>
+    <string name="player_2_life_plus1">+1</string>
+    <string name="player_2_life_minus5">-5</string>
+    <string name="player_2_life_minus1">-1</string>
+    <string name="player_1_life_minus5">-5</string>
+    <string name="player_1_life_plus5">+5</string>
+    <string name="player_1_life_plus1">+1</string>
+    <string name="player_1_token_plus1">+1</string>
+    <string name="player_1_token_minus1">-1</string>
+    <string name="player_1_life_minus1">-1</string>
+    <string name="player_1_poison_counter_title">Player 1\nPoison Counters</string>
+    <string name="player_2_poison_counter_title">Player 2\nPoison Counters</string>
+    <string name="player_1_commander_damage_title">Player 1\nCommander Damage</string>
+    <string name="player_2_commander_damage_title">Player 2\nCommander Damage</string>
+    <string name="new_game_button">New Game</string>
+    <string name="flip_coin_transition_button">Flip Coin</string>
+    <string name="roll_dice_transition_button">Roll Dice</string>
 </resources>
